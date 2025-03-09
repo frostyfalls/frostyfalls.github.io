@@ -1,0 +1,21 @@
+baseURL = "https://mending.trade/"
+title = "frosty"
+
+[[menu.main]]
+identifier = "frosty"
+name = "frosty"
+pageref = "/"
+weight = 1
+
+[[menu.main]]
+identifier = "contact"
+name = "contact/"
+pageref = "/contact"
+
+[[menu.main]]
+identifier = "rocks"
+name = "rocks/"
+pageref = "/rocks"
+
+[markup.goldmark.renderer]
+unsafe = true

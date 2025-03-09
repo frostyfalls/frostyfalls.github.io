@@ -1,0 +1,13 @@
+{{ $currentPage := . }}
+<ul class="menu">
+    <img src="/assets/avatar.png" />
+    {{ range site.Menus.main }}
+        {{ if $currentPage.IsMenuCurrent .Menu . }}
+            <li class="menu-current">
+        {{ else }}
+            <li>
+        {{ end }}
+            <a href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+    {{ end }}
+</ul>
