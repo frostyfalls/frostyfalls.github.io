@@ -1,0 +1,4 @@
+<p>Running since 2020. Made with love by <a href="/about">{{ .Site.Params.Author.name }}</a>.</p>
+{{ range .Site.Data.footerButtons }}
+    <a href="{{ .url }}"><img src="{{ .image }}" alt="{{ .name }}" title="{{ .name }}"></a>
+{{ end }}

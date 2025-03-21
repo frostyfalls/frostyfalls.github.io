@@ -2,14 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
     <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/avatar.png">
 </head>
 <body>
-    {{ partial "menu.html" . }}
-    {{ block "main" . }}{{ end }}
-    <hr>
-    <p>&copy;{{ dateFormat "2006" now }} {{ .Site.Title }}</p>
+    <div class="content">
+        <div class="body">
+            <div class="main">
+                {{ block "main" . }}{{ end }}
+            </div>
+            <hr>
+            {{ partial "footer.html" . }}
+        </div>
+        <div class="menu">
+            {{ partial "menu.html" . }}
+        </div>
+    </div>
 </body>
 </html>

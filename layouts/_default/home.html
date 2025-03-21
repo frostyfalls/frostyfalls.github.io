@@ -1,3 +1,18 @@
 {{ define "main" }}
+    <div class="center">
+        <h1>{{ .Site.Title }}</h1>
+	<p><em>Last updated {{ time.Now | time.Format "January 2, 2006" }}</em></p>
+    </div>
     {{ .Content }}
+    {{ $posts := where .Site.RegularPages "Type" "posts" }}
+    {{ $length := len $posts }}
+    {{ if ne $length 0 }}
+    <h2>Posts</h2>
+    {{ end }}
+    {{ range $index, $post := $posts }}
+        <p><b><a href="{{ $post.RelPermalink }}">{{ $post.LinkTitle }}</a></b></p>
+        <p><em>{{ $post.Date.Format "January 2, 2006" }}</em></p>
+        <p>{{ $post.Summary }}</p>
+        {{ if ne (add $index 1) $length }}<hr>{{ end }}
+    {{ end }}
 {{ end }}

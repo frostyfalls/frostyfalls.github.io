@@ -1,7 +1,6 @@
 {{ define "main" }}
-    <h1>{{ .Title }}</h1>
-    {{ if .Description }}
-        <p>{{ .Description }}</p>
-    {{ end }}
+    <h2>{{ .Title }}</h2>
+    {{ if .Date }}<p><em>{{ .Date.Format "January 2, 2006" }}</em></p>{{ end }}
+    {{ if .Description }}<p>{{ .Description }}</p>{{ end }}
     {{ .Content }}
 {{ end }}

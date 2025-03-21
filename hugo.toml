@@ -1,21 +1,11 @@
 baseURL = "https://mending.trade/"
-title = "frosty"
+title = "frosty's space"
 
-[[menu.main]]
-identifier = "frosty"
+[params.author]
 name = "frosty"
-pageref = "/"
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about"
 weight = 1
-
-[[menu.main]]
-identifier = "contact"
-name = "contact/"
-pageref = "/contact"
-
-[[menu.main]]
-identifier = "rocks"
-name = "rocks/"
-pageref = "/rocks"
-
-[markup.goldmark.renderer]
-unsafe = true
